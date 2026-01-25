@@ -69,8 +69,8 @@ function compareStatuses(aEl, bEl) {
 		return [1, 0];
 	};
 
-	const aKey = sortKey(aEl.dataset.tooltipText ?? '');
-	const bKey = sortKey(bEl.dataset.tooltipText ?? '');
+	const aKey = sortKey(aEl.dataset.tooltipText ?? aEl.dataset.tooltip ?? '');  // Fallback for other systems
+	const bKey = sortKey(bEl.dataset.tooltipText ?? bEl.dataset.tooltip ?? '');  // Fallback for other systems
 
 	const [aGroup, aOrder] = rank(aKey);
 	const [bGroup, bOrder] = rank(bKey);
@@ -147,7 +147,7 @@ function rebuildStatusEffects({ app, container, enabled }) {
 		icon.alt = '';
 
 		const label = document.createElement('p');
-		label.textContent = (img.dataset.tooltipText ?? '').replace('Three-Quarters', '3/4').replace('Half', '1/2');
+		label.textContent = (img.dataset.tooltipText ?? img.dataset.tooltip ?? '').replace('Three-Quarters', '3/4').replace('Half', '1/2'); // Fallback for other systems
 
 		wrapper.append(icon, label);
 		frag.appendChild(wrapper);
