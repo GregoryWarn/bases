@@ -2,7 +2,7 @@
 * Initial public release.
 * Added incompatibility handling for Draw Steel system
   * Community testing and feedback would be appreciated to help identify other incompatible systems or cases that may require system-specific handling
-* Fixed an issue where status effect names could wrap incorrectly in the token HUD
+* Fixed an issue where status effect names could wrap incorrectly in the token HUD.
 
 ## v13.351.2 - 2026-01-25
 * Fixed an issue where status effects would be without a label in some systems.
