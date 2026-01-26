@@ -4,8 +4,7 @@ import { registerSettings } from './bases-settings.mjs';
 Hooks.once('init', registerSettings);
 
 Hooks.once('ready', basesReady);
-Hooks.on('renderSettingsConfig', statusesRenderSettingsConfigHook);
-Hooks.on('renderTokenHUD', statusesRenderTokenHUDHook);
+
 
 function ensureHudStyle() {
 	let el = document.getElementById(Constants.STYLE_ID);
@@ -254,6 +253,8 @@ function shouldRebuildOnce(container, enabled) {
 }
 
 function basesReady() {
+	if (['draw-steel'].includes(game.system.id)) return ui.notifications.error(game.i18n.localize('BASES.IncompatibleSystemError'));
+
 	globalThis.bases = { info: { version: game.modules.get(Constants.MODULE_ID).version } };
 	ensureHudStyle();
 	applyHudGridSettings(); // apply saved values
@@ -261,6 +262,9 @@ function basesReady() {
 		ui.notifications.error(game.i18n.localize('BASES.IncompatibleSystemError'));
 		game.settings.set(Constants.MODULE_ID, 'hudEnabled', false);
 	}
+
+	Hooks.on('renderSettingsConfig', statusesRenderSettingsConfigHook);
+	Hooks.on('renderTokenHUD', statusesRenderTokenHUDHook);
 }
 
 function markBuilt(container, enabled) {
