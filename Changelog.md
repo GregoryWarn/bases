@@ -2,13 +2,13 @@
 
 - Added Filter effects field for quick search
 - Supported systems (current):
-- Crucible
-- Daggerheart
-- DC20
-- DnD4e
-- DnD5e
-- Mosh
-- PF2e
+  - Crucible
+  - Daggerheart
+  - DC20
+  - DnD4e
+  - DnD5e
+  - Mosh
+  - PF2e
 - Known incompatibilities:
   - Draw Steel (by design, system already provides similar functionality)
 
