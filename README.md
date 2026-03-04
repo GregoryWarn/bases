@@ -1,6 +1,16 @@
 # Bugbear's Assign Status Effects Sorter
 A system-agnostic Foundry VTT module that adds sorting and improves visibility in the Assign Status Effects HUD.
 
+- Supported systems (current):
+  - Crucible
+  - Daggerheart
+  - DC20
+  - DnD4e
+  - DnD5e
+  - Mosh
+  - PF2e
+- Known incompatibilities:
+  - Draw Steel (by design, system already provides similar functionality)
 
 [BasesCrucibleFilters.webm](https://github.com/user-attachments/assets/c5e6b5e7-d156-4ff6-a069-d6d9f50ab006)
 
